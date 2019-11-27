@@ -1,0 +1,7 @@
+name = D7 Responsive Pop Up
+description = Responsive Pop Up Module.
+package = D7 Custom module
+core = 7.x
+stylesheets[all][] = css/d7_responsive_pop_up.css
+scripts[] = js/d7_responsive_pop_up.js
+
