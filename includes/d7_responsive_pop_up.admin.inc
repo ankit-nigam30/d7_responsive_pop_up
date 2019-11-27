@@ -22,23 +22,17 @@ function responsive_pop_up_variable_info() {
     'title' => t('Normal POP UP'),
     'localize' => TRUE,
     'group' => 'Responsive_pop_up',
-		'description' => t('Responsive Pop Up Module')
+	'description' => t('Responsive Pop Up Module')
   );
-
   return $variable;
 }
+
 function responsive_pop_up_my_form($form, $form_state) {  
   $form['normal_pop_up']['normal_pop_up_content'] = array(
-    '#type' => 'textarea',
-    '#title' => t('Pop Up Content for English'),
-		'#default_value' => variable_get('normal_pop_up_content'),
-  );
-	$form['normal_pop_up']['normal_pop_up_content_fr'] = array(
-    '#type' => 'textarea',
-    '#title' => t('Pop Up Content for French'),
-		'#default_value' => variable_get('normal_pop_up_content_fr'),
-  );
-	
+     '#type' => 'textarea',
+     '#title' => t('Pop Up Content for English'),
+	 '#default_value' => variable_get('normal_pop_up_content'),
+    );
 	return system_settings_form($form);
 }
 

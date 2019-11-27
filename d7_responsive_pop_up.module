@@ -20,14 +20,14 @@ function d7_responsive_pop_up_block_view($delta = '') {
   switch ($delta) {
     case 'normal_pop_up':
       $block['subject'] = 'Responsive Pop Up';
-      $block['content'] = $language->language == 'en' ? d7_responsive_pop_up_block_content(variable_get('normal_pop_up_content')) : _responsive_pop_up_block_content(variable_get('normal_pop_up_content_fr'));
+      $block['content'] =  d7_responsive_pop_up_block_content(variable_get('normal_pop_up_content')):
       break;
-  }
+    }
   return $block;
 }
 
 function d7_responsive_pop_up_block_content($body) {
-	drupal_add_js(array('d7_responsive_pop_up' => array('type' => 'setting')));
+  drupal_add_js(array('d7_responsive_pop_up' => array('type' => 'setting')));
   $output = "<div class='responsive-pop-up'><div class='overlay-block'></div><div class='text-block'>" . $body . "</div></div>";  
   return $output;
 }
@@ -39,10 +39,11 @@ function d7_responsive_pop_up_block_content($body) {
 */
 function d7_responsive_pop_up_menu() {
   $items['admin/config/system/responsive_pop_up'] = array(
-    'title' => t('Responsive Pop Up Setting'),
-    'page callback' => 'responsive_pop_up_form',
-    'access arguments' => array('access content'),
-		'file' => 'includes/d7_responsive_pop_up.admin.inc',
-  );
+     'title' => t('Responsive Pop Up Setting'),
+     'page callback' => 'responsive_pop_up_form',
+     'access arguments' => array('access content'),
+	 'file' => 'includes/d7_responsive_pop_up.admin.inc',
+    );
   return $items;
 }
+
